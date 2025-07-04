@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Console Appender (for development or debugging) -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5level] [%-20logger] - %msg%n</pattern>
+       </encoder>
+    </appender>
+
+    <!-- File Appender (write to app.log) -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/app.log</file>  <!-- Log file location -->
+      <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%-5level] [%-20logger] - %msg%n</pattern>
+      </encoder>
+    </appender>
+
+    <!-- Root logger configuration (write to both console and file) -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+    <!-- Specific Logger for Performance Monitoring Aspect -->
+    <logger name="com.example.asweprj.demo.aspects.PerformanceMonitoringAspect" level="INFO">
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <!-- Specific Logger for Audit Logging Aspect -->
+    <logger name="com.example.asweprj.demo.aspects.AuditLoggingAspect" level="INFO">
+        <appender-ref ref="FILE"/>
+    </logger>
+
+</configuration>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body class="light-bg">
+  <div class="center-box">
+    <div class="form-section">
+      <h2>Sign in to Website</h2>
+
+      <div class="social-icons">
+        <button title="Facebook">f</button>
+        <button title="LinkedIn">in</button>
+        <button title="Twitter">t</button>
+      </div>
+
+      <p class="subtext">or use your email account</p>
+
+      <form th:action="@{/auth/login}" method="post" th:object="${user}">
+        <input type="email" th:field="*{email}" placeholder="Email" required />
+        <input type="password" th:field="*{password}" placeholder="Password" required />
+        <a href="#" class="forgot">Forgot your password?</a>
+        <button type="submit" class="submit-btn">SIGN IN</button>
+      </form>
+
+      <p th:if="${error}" th:text="${error}" class="error-msg"></p>
+    </div>
+
+    <div class="info-section">
+      <h2>Welcome Back!</h2>
+      <p>Enter your personal details and start journey with us</p>
+      <a th:href="@{/auth/register}">
+        <button class="outline-btn">SIGN UP</button>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

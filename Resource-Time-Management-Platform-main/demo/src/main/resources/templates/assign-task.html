@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <!-- <link rel="stylesheet" th:href="@{/css/task.css}"> -->
+<head>
+    <title>Assign Task</title>
+    <style>
+/* General Page */
+body {
+    background-color: #f4f5f7; /* off-white */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #0f1c3f; /* dark blue */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.custom-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e3340; /* dark grey */
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-left {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.nav-right {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-btn {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: #0f1c3f; /* dark blue */
+    color: #ffffff;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #1f2d5a;
+}
+
+/* Main Container */
+.assign-container {
+    max-width: 550px;
+    margin: 4rem auto;
+    background-color: #ffffff;
+    border: 2px solid #0f1c3f;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    padding: 2.5rem;
+}
+
+/* Title */
+.assign-container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    color: #0f1c3f;
+}
+
+/* Label + Select */
+label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+select {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.3rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background-color: #f1f5f9;
+    color: #0f1c3f;
+    transition: all 0.3s ease;
+}
+
+select:focus {
+    outline: none;
+    border-color: #0f1c3f;
+    box-shadow: 0 0 6px #0f1c3f;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    width: 100%;
+    margin-top: 1.5rem;
+    background-color: #0f1c3f;
+    color: #ffffff;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #1d2a53;
+    transform: scale(1.02);
+}
+
+/* Back Button */
+.center-btn {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.back-btn {
+    background-color: #2e3340;
+    color: #ffffff;
+    padding: 0.6rem 1.5rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #3c4355;
+}
+
+    </style>
+</head>
+<body>
+
+<!-- Custom Navbar -->
+<nav class="custom-navbar">
+    <div class="nav-left">Manager Panel</div>
+    <div class="nav-right">
+        <a class="nav-btn" th:href="@{/manager/dashboard}">Dashboard</a>
+        <a class="nav-btn" th:href="@{/tasks/create}">Create Task</a>
+        <a class="nav-btn" th:href="@{/tasks/list}">Task List</a>
+        <a class="nav-btn" th:href="@{/auth/logout}">Logout</a>
+    </div>
+</nav>
+
+<!-- Main Box -->
+<div class="assign-container">
+    <h2>Assign Task to Employee</h2>
+
+    <form th:action="@{'/tasks/assign/' + ${task.taskId}}" method="post">
+        <label for="employeeId">Select Employee:</label>
+        <select id="employeeId" name="employeeId" required>
+            <option value="" disabled selected>Select an employee</option>
+            <option th:each="emp : ${employees}"
+                    th:value="${emp.userId}"
+                    th:text="${emp.name + ' (' + emp.email + ')'}"></option>
+        </select>
+
+        <button type="submit">Assign</button>
+    </form>
+
+    <div class="center-btn mt">
+        <a th:href="@{/tasks/list}" class="back-btn">← Back to Task List</a>
+    </div>
+</div>
+
+</body>
+</html>

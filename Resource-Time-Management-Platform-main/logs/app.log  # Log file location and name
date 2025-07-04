@@ -1,0 +1,81 @@
+2025-05-26T21:23:11.600+03:00 ERROR 8124 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'logging.level.com.example.asweprj.demo.aspects.performancemonitoringaspect' to org.springframework.boot.logging.LogLevel:
+
+    Property: logging.level.com.example.asweprj.demo.aspects.performancemonitoringaspect
+    Value: "INFO  # Performance log level"
+    Origin: class path resource [application.properties] - 14:76
+    Reason: failed to convert java.lang.String to org.springframework.boot.logging.LogLevel (caused by java.lang.IllegalArgumentException: No enum constant org.springframework.boot.logging.LogLevel.INFO  # Performance log level)
+
+Action:
+
+Update your application's configuration. The following values are valid:
+
+    DEBUG
+    ERROR
+    FATAL
+    INFO
+    OFF
+    TRACE
+    WARN
+
+2025-05-26T21:24:42.465+03:00 ERROR 16432 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'logging.level.com.example.asweprj.demo.aspects.performancemonitoringaspect' to org.springframework.boot.logging.LogLevel:
+
+    Property: logging.level.com.example.asweprj.demo.aspects.performancemonitoringaspect
+    Value: "INFO  # Performance log level"
+    Origin: class path resource [application.properties] - 14:76
+    Reason: failed to convert java.lang.String to org.springframework.boot.logging.LogLevel (caused by java.lang.IllegalArgumentException: No enum constant org.springframework.boot.logging.LogLevel.INFO  # Performance log level)
+
+Action:
+
+Update your application's configuration. The following values are valid:
+
+    DEBUG
+    ERROR
+    FATAL
+    INFO
+    OFF
+    TRACE
+    WARN
+
+2025-05-26T21:26:08.058+03:00 ERROR 16280 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'logging.level.org.hibernate.sql' to org.springframework.boot.logging.LogLevel:
+
+    Property: logging.level.org.hibernate.sql
+    Value: "warn  # Hibernate SQL logs (optional)"
+    Origin: class path resource [application.properties] - 16:33
+    Reason: failed to convert java.lang.String to org.springframework.boot.logging.LogLevel (caused by java.lang.IllegalArgumentException: No enum constant org.springframework.boot.logging.LogLevel.warn  # Hibernate SQL logs (optional))
+
+Action:
+
+Update your application's configuration. The following values are valid:
+
+    DEBUG
+    ERROR
+    FATAL
+    INFO
+    OFF
+    TRACE
+    WARN
+

@@ -1,0 +1,113 @@
+/* Base layout */
+body {
+    background-color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #0f1c3f;
+    padding: 2rem;
+    margin: 0;
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #0f1c3f;
+}
+
+/* Task list container */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* Individual task box */
+li {
+    background: #f9fbfd;
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+li:hover {
+    transform: translateY(-5px);
+}
+
+/* Task description */
+strong {
+    font-size: 1.2rem;
+    color: #0f1c3f;
+}
+
+/* Status line */
+p {
+    font-size: 1rem;
+    margin: 0.5rem 0 0.5rem 0;
+    color: #0f1c3f;
+}
+
+p span {
+    font-weight: bold;
+    color: #4d88ff;
+}
+
+/* Buttons */
+button {
+    background: #4d88ff;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    color: white;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 0.8rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #356ee0;
+    transform: scale(1.05);
+}
+
+/* Navigation Links */
+a {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-top: 2rem;
+    color: #4d88ff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0f1c3f;
+    text-decoration: underline;
+}
+
+/* Empty task message */
+div p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #777;
+}
+/* Task box container */
+/* Task box container with dark border and shadow */
+.task-box {
+    background-color: #ffffff;
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 2px solid #0f1c3f; /* dark blue border */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2); /* darker, deeper shadow */
+}
+
+

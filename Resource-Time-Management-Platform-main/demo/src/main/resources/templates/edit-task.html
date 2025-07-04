@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Edit Task</title>
+  <link rel="stylesheet" th:href="@{/css/editTask.css}" />
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="custom-navbar">
+  <div class="nav-left">Manager Panel</div>
+  <div class="nav-right">
+    <a class="nav-btn" th:href="@{/manager/dashboard}">Dashboard</a>
+    <a class="nav-btn" th:href="@{/tasks/create}">Create Task</a>
+    <a class="nav-btn" th:href="@{/tasks/list}">Task List</a>
+    <a class="nav-btn" th:href="@{/auth/logout}">Logout</a>
+  </div>
+</nav>
+
+<!-- Main Container -->
+<div class="assign-container">
+  <h2>Edit Task</h2>
+
+  <form th:action="@{'/tasks/edit/' + ${task.taskId}}" th:object="${task}" method="post">
+    <label for="description">Description:</label>
+    <input type="text" th:field="*{description}" id="description" required />
+
+    <label for="status">Status:</label>
+    <input type="text" th:field="*{status}" id="status" required />
+
+    <button type="submit">Update Task</button>
+  </form>
+
+  <div class="center-btn">
+    <a th:href="@{/tasks/list}" class="back-btn">← Back to Task List</a>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+/* Base layout */
+body {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  background-color: #ffffff; /* white background */
+  color: #0f1c3f; /* dark blue text */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #2c2c2c; /* dark grey */
+  width: 240px;
+  height: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.nav-link {
+  color: #e0e0e0;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background-color: #4d88ff;
+  color: #ffffff;
+}
+
+.logout {
+  margin-top: auto;
+  color: #cccccc;
+  border-top: 1px solid #444;
+  padding-top: 16px;
+}
+
+/* Main content layout */
+.main-content {
+  flex: 1;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Topbar with centered text */
+.topbar {
+  background-color: #f5f7fa;
+  padding: 2rem 2rem;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.dashboard-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f1c3f;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-idea {
+  font-size: 1.1rem;
+  color: #4d88ff;
+  font-weight: 500;
+}
+
+/* Section titles */
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #0f1c3f;
+}
+
+/* Cards */
+.card {
+  background-color: #f9fbfd;
+  border: 1px solid #e3e7ed;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.03);
+  color: #0f1c3f;
+}
+
+/* Tables */
+.table {
+  background-color: transparent;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table thead {
+  background-color: #4d88ff;
+  color: #ffffff;
+}
+
+.table td {
+  background-color: #ffffff;
+  color: #0f1c3f;
+  border-color: #d0d7e2;
+}
+
+/* Table responsive wrapper */
+.table-responsive {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.03);
+}
+
+/* Buttons */
+a.btn[href*="/employee/tasks"],
+.btn-outline-dark,
+.nav-link.logout {
+  border-color: #4d88ff;
+  color: #4d88ff;
+  background-color: transparent;
+  transition: 0.3s ease;
+}
+
+a.btn:hover,
+.btn-outline-dark:hover,
+.nav-link.logout:hover {
+  background-color: #4d88ff;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(77, 136, 255, 0.4);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #4d88ff;
+  border-radius: 10px;
+}

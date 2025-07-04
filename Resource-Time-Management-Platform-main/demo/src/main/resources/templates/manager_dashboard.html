@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Manager Dashboard</title>
+<link rel="stylesheet" th:href="@{/css/managerDashboard.css}">
+</head>
+<body>
+
+<nav class="custom-navbar">
+  <div class="navbar-container">
+    <a href="#" class="navbar-brand">Manager</a>
+    <ul class="navbar-nav">
+      <li><a href="#" class="nav-link active">Home</a></li>
+      <li><a href="/view-workload" class="nav-link">View Workload</a></li>
+      <li><a href="/manager/edit-workload" class="nav-link">Edit Workload</a></li>
+      <li><a href="/manager/tasks" class="nav-link">Tasks</a></li>
+    </ul>
+    <button class="btn-outline-dark" onclick="location.href='/auth/logout'">Logout</button>
+  </div>
+</nav>
+
+<header>
+  <div class="container-fluid position-relative">
+    <h1 class="dashboard-title">Dashboard</h1>
+  </div>
+</header>
+
+<div class="d-flex">
+  <nav class="side-menu" aria-label="Sidebar navigation">
+    <a href="#" class="nav-link active">Home</a>
+    <a href="/manager/view-workload" class="nav-link">View Workload</a>
+    <a href="/manager/edit-workload" class="nav-link">Edit Workload</a>
+    <a href="/manager/tasks" class="nav-link">Tasks</a>
+  </nav>
+
+  <main class="flex-grow-1" role="main">
+    <section>
+      <h2 class="custom-text">Employee Overview</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Workload</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mohamed Ahmed</td>
+            <td>mohamed@example.com</td>
+            <td>35%</td>
+          </tr>
+          <tr th:each="employee : ${employees}">
+            <td th:text="${employee.name}"></td>
+            <td th:text="${employee.email}">john@example.com</td>
+            <td th:text="${employee.workload}">0</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section style="margin-top: 3rem;">
+      <h2 class="custom-text">Task Overview</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Assigned To</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Prepare sales report</td>
+            <td>Mohamed Ahmed</td>
+            <td>In Progress</td>
+          </tr>
+          <tr th:each="task : ${tasks}">
+            <td th:text="${task.description}">Task 1</td>
+            <td th:text="${task.employee != null} ? ${task.employee.name} : 'Unassigned'">Unassigned</td>
+            <td th:text="${task.status}">In Progress</td>
+                        
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <p>© 2025 Company Name. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Tasks</title>
+    <link rel="stylesheet" th:href="@{/css/time-tracking-tasks.css}">
+</head>
+<body>
+
+    <div class="task-box">
+
+        <!-- Page Heading -->
+        <h1>Employee Task List</h1>
+
+        <!-- No tasks message -->
+        <div th:if="${tasks.isEmpty()}">
+            <p>No tasks assigned.</p>
+        </div>
+
+        <!-- Task list -->
+        <div th:if="${not tasks.isEmpty()}">
+            <ul>
+                <th:block th:each="task : ${tasks}">
+                    <li>
+                        <div>
+                            <strong th:text="${task.description}">Task Description</strong>
+                        </div>
+
+                        <div>
+                            <p>Status: <span th:text="${task.status != null ? task.status : 'Unknown'}">In Progress</span></p>
+                        </div>
+
+                        <!-- Timer buttons -->
+                        <div th:if="${task.status == 'TO DO'}">
+                            <form th:action="@{/employee/tasks/start/{taskId}(taskId=${task.taskId})}" method="post">
+                                <button type="submit">Start Timer</button>
+                            </form>
+                        </div>
+
+                        <div th:if="${task.status == 'IN PROGRESS'}">
+                            <form th:action="@{/employee/tasks/end/{taskId}(taskId=${task.taskId})}" method="post">
+                                <button type="submit">End Timer</button>
+                            </form>
+                        </div>
+                    </li>
+                </th:block>
+            </ul>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-links">
+            <a href="/employee/dashboard">← Dashboard</a>
+            <a href="/auth/logout">Logout</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

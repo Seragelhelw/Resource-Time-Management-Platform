@@ -1,0 +1,89 @@
+/* General Body Styling */
+body {
+    background-color: #0f2027; /* Dark gradient base from screenshot */
+    font-family: Arial, sans-serif;
+    color: #ffffff; /* White text for general content */
+}
+
+/* Container Styling */
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: rgba(31, 45, 61, 0.85); /* Dark matte container background */
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 255, 255, 0.2); /* Cyan-ish soft border */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Slightly stronger soft shadow */
+    backdrop-filter: blur(8px);
+}
+
+/* Heading Style */
+h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.2); /* Cyan-glow */
+}
+
+/* Label Styling */
+label {
+    display: block;
+    margin-top: 15px;
+    color: #cfd8dc; /* Soft gray-blue label */
+}
+
+/* Select Dropdown */
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Very subtle */
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+/* On Focus - Select Dropdown */
+select:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3); /* Cyan-ish shadow */
+}
+
+/* Button Styling */
+button {
+    background-color: #00bcd4; /* Cyan like login button */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color: #00acc1;
+    transform: scale(1.05);
+}
+
+/* Back Link Styling */
+.back-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.back-link a {
+    color: #00e5ff; /* Bright cyan link */
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.back-link a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}

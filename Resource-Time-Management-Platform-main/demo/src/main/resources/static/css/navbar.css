@@ -1,0 +1,42 @@
+/* Navbar container */
+.custom-navbar {
+    background: linear-gradient(135deg, #0f1e3a, #1a2f55, #223866); /* dark matte blue gradient */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Navbar brand */
+.navbar-brand {
+    font-size: 3rem;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Nav links */
+.nav-link {
+    color: #9ddcff; /* soft cyan text */
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 0 15px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* Navbar toggler (for smaller screens) */
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28 255, 255, 255, 0.7 %29)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Center the navbar links */
+.navbar-nav {
+    text-align: center;
+}

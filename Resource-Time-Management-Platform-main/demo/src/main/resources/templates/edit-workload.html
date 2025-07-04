@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Edit Workload</title>
+  <link rel="stylesheet" th:href="@{/css/editWorkload2.css}" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navbar inclusion -->
+  <div th:replace="~{navbar :: navbar}"></div>
+
+  <div class="d-flex">
+
+    <!-- Sidebar (same as dashboard) -->
+    <nav class="side-menu" aria-label="Sidebar navigation">
+      <a href="#" class="nav-link">Home</a>
+      <a href="/manager/view-workload" class="nav-link">View Workload</a>
+      <a href="/manager/edit-workload" class="nav-link active">Edit Workload</a>
+      <a href="/manager/tasks" class="nav-link">Tasks</a>
+    </nav>
+
+    <!-- Main content -->
+    <main class="main-content">
+      <h1 class="dashboard-title mb-4">Edit Workload for <span th:text="${employee.name}"></span></h1>
+
+      <form
+        th:action="@{/manager/update-workload/{employeeId}(employeeId=${employee.userId})}"
+        method="post"
+        class="edit-workload-form"
+      >
+        <div class="mb-3">
+          <label for="workload" class="form-label">Workload</label>
+          <input
+            type="number"
+            id="workload"
+            name="workload"
+            class="form-control"
+            th:value="${employee.workload}"
+            required
+          />
+        </div>
+        <button type="submit" class="btn-primary">Save</button>
+      </form>
+    </main>
+
+  </div>
+  <!-- ... existing body content ... -->
+
+  </div> <!-- end of d-flex -->
+
+  <!-- Footer -->
+  <footer class="footer-container">
+    <p>© 2025 Company Name. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</body>
+</html>

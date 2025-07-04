@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Register</title>
+  <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body class="light-bg">
+  <div class="center-box">
+    <div class="form-section">
+      <h2>Create Account</h2>
+
+      <div class="social-icons">
+        <button title="Facebook">f</button>
+        <button title="LinkedIn">in</button>
+        <button title="Twitter">t</button>
+      </div>
+
+      <p class="subtext">or use your email for registration</p>
+
+      <form th:action="@{/auth/register}" method="post" th:object="${user}">
+        <input type="text" th:field="*{name}" placeholder="Name" required />
+        <input type="email" th:field="*{email}" placeholder="Email" required />
+        <input type="password" th:field="*{password}" placeholder="Password" required />
+        <!-- <select th:field="*{role}">
+          <option value="EMPLOYEE">Employee</option>
+          <option value="MANAGER">Manager</option>
+        </select> -->
+        <button type="submit" class="submit-btn">REGISTER</button>
+      </form>
+
+      <p th:if="${error}" th:text="${error}" class="error-msg"></p>
+    </div>
+
+    <div class="info-section">
+      <h2>Hello Friend!</h2>
+      <p>If you already have an account, sign in here</p>
+      <a th:href="@{/auth/login}">
+        <button class="outline-btn">LOGIN</button>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
